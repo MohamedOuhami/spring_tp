@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,14 +37,14 @@ public class StudentController {
 
     // Put Mapping
 
-    @PutMapping("/save")
+    @PostMapping("/save")
     public void addStudent(@RequestBody Student student){
         studentRepository.save(student);
     }
 
     // Delete mapping
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete")
     public void deleteStudent(@RequestParam Integer id){
         studentRepository.deleteById(id);
     }
